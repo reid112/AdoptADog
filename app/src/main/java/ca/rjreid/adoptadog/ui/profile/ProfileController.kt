@@ -14,6 +14,7 @@ import ca.rjreid.adoptadog.util.image
 import com.bluelinelabs.conductor.Controller
 import io.smooch.ui.ConversationActivity
 import de.hdodenhof.circleimageview.CircleImageView
+import io.smooch.core.User
 
 class ProfileController : Controller() {
 
@@ -59,5 +60,12 @@ class ProfileController : Controller() {
         messageButton.setOnClickListener { ConversationActivity.show(activity) }
         fosterButton.setOnClickListener { customTabsIntent.launchUrl(activity, Uri.parse(FOSTER_APPLICATION_URL)) }
         adoptionButton.setOnClickListener { customTabsIntent.launchUrl(activity, Uri.parse(ADOPTION_APPLICATION_URL)) }
+
+        User.getCurrentUser().setFirstName("Riley")
+        User.getCurrentUser().setLastName("Reid")
+
+        val customProperties = HashMap<String, Any>()
+        customProperties.put("Fostering Dog", "Gordon")
+        User.getCurrentUser().addProperties(customProperties)
     }
 }
