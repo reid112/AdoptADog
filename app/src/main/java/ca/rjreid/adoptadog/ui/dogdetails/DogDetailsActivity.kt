@@ -62,6 +62,8 @@ class DogDetailsActivity : BaseActivity(), DogDetailsView {
             dogAge.text = it.age
             dogBreed.text = "${it.breed} (${it.sex})"
 
+            generalCard.setData(it)
+
             it.healthIssues?.let {
                 healthIssuesCard.setData(it)
                 healthIssuesCard.show()
