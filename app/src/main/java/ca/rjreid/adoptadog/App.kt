@@ -8,6 +8,10 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import timber.log.Timber
 import javax.inject.Inject
+import io.smooch.core.Settings
+import io.smooch.core.Smooch
+import io.smooch.core.SmoochCallback
+
 
 class App : Application(), HasActivityInjector {
     //region Variables
@@ -19,6 +23,10 @@ class App : Application(), HasActivityInjector {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
         initializeDagger()
+
+        Smooch.init(this, Settings("59cf2696933506004059adb8"), SmoochCallback {
+            // Your code after init is complete
+        })
     }
     //endregion
 

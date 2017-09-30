@@ -124,4 +124,9 @@ dependencies {
     // Circle Image View (https://github.com/hdodenhof/CircleImageView)
     implementation 'de.hdodenhof:circleimageview:2.1.0'
 
+    //Smooch
+    compile 'io.smooch:core:latest.release'
+    compile 'io.smooch:ui:latest.release'
+
+
 }
