@@ -6,6 +6,5 @@ interface MainView : BaseView {
     fun initialize()
     fun showHome()
     fun showMyDog()
-    fun showMessages()
     fun showProfile()
 }

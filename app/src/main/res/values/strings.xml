@@ -5,7 +5,6 @@
     <!-- Tab Titles -->
     <string name="tab_title_home">Home</string>
     <string name="tab_title_my_dog">My Dog</string>
-    <string name="tab_title_messages">Messages</string>
     <string name="tab_title_profile">Profile</string>
 
     <!-- Menus -->
