@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import ca.rjreid.adoptadog.R
+import ca.rjreid.adoptadog.data.model.Dog
 import ca.rjreid.adoptadog.ui.base.BaseActivity
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_dog_details.*
@@ -13,7 +14,11 @@ import javax.inject.Inject
 class DogDetailsActivity : BaseActivity(), DogDetailsView {
     companion object {
         @JvmStatic
-        fun createIntent(context: Context) = Intent(context, DogDetailsActivity::class.java)
+        fun createIntent(context: Context, dog: Dog) : Intent {
+            val intent = Intent(context, DogDetailsActivity::class.java)
+            intent.putExtra(DogDetailsPresenter.EXTRA_DOG, dog)
+            return intent
+        }
     }
 
     //region Variables

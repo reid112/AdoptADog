@@ -8,6 +8,12 @@ import com.evernote.android.state.State
 import com.evernote.android.state.StateSaver
 
 class DogDetailsPresenter constructor(private var dogDetailsView: DogDetailsView, private var dataManager: DataManager) {
+    //region Constants
+    companion object {
+        const val EXTRA_DOG = "EXTRA_DOG"
+    }
+    //endregion
+
     //region Variables
     private val compositeDisposable = CompositeDisposable()
     //endregion
