@@ -8,6 +8,7 @@ import ca.rjreid.adoptadog.R
 import ca.rjreid.adoptadog.data.model.Dog
 import ca.rjreid.adoptadog.ui.base.BaseActivity
 import ca.rjreid.adoptadog.util.image
+import ca.rjreid.adoptadog.util.show
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_dog_details.*
 import kotlinx.android.synthetic.main.component_dog_list_item.view.*
@@ -59,7 +60,27 @@ class DogDetailsActivity : BaseActivity(), DogDetailsView {
             dogImage.image(it.image)
             dogName.text = it.name
             dogAge.text = it.age
-            dogBreed.text = it.breed
+            dogBreed.text = "${it.breed} (${it.sex})"
+
+            it.healthIssues?.let {
+                healthIssuesCard.setData(it)
+                healthIssuesCard.show()
+            }
+
+            it.vaccinations?.let {
+                vaccinationsCard.setData(it)
+                vaccinationsCard.show()
+            }
+
+            it.appointments?.let {
+                appointmentsCard.setData(it)
+                appointmentsCard.show()
+            }
+
+            it.medications?.let {
+                medicationsCard.setData(it)
+                medicationsCard.show()
+            }
         }
     }
     //endregion
