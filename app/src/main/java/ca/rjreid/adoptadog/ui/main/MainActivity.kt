@@ -8,7 +8,6 @@ import android.view.MenuItem
 import ca.rjreid.adoptadog.R
 import ca.rjreid.adoptadog.ui.base.BaseActivity
 import ca.rjreid.adoptadog.ui.list.ListController
-import ca.rjreid.adoptadog.ui.messages.MessagesController
 import ca.rjreid.adoptadog.ui.mydog.MyDogController
 import ca.rjreid.adoptadog.ui.profile.ProfileController
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
@@ -97,13 +96,6 @@ class MainActivity : BaseActivity(), MainView {
                 .popChangeHandler(HorizontalChangeHandler()))
     }
 
-    override fun showMessages() {
-        router?.pushController(RouterTransaction
-                .with(MessagesController())
-                .pushChangeHandler(HorizontalChangeHandler())
-                .popChangeHandler(HorizontalChangeHandler()))
-    }
-
     override fun showProfile() {
         router?.pushController(RouterTransaction
                 .with(ProfileController())
@@ -124,13 +116,11 @@ class MainActivity : BaseActivity(), MainView {
     private fun initializeBottomNavigation() {
         val item1 = AHBottomNavigationItem(R.string.tab_title_home, R.drawable.icon_home, R.color.colorAccent)
         val item2 = AHBottomNavigationItem(R.string.tab_title_my_dog, R.drawable.icon_home, R.color.colorAccent)
-        val item3 = AHBottomNavigationItem(R.string.tab_title_messages, R.drawable.icon_home, R.color.colorAccent)
-        val item4 = AHBottomNavigationItem(R.string.tab_title_profile, R.drawable.icon_home, R.color.colorAccent)
+        val item3 = AHBottomNavigationItem(R.string.tab_title_profile, R.drawable.icon_home, R.color.colorAccent)
 
         bottomNavigation.addItem(item1)
         bottomNavigation.addItem(item2)
         bottomNavigation.addItem(item3)
-        bottomNavigation.addItem(item4)
 
         bottomNavigation.defaultBackgroundColor = ContextCompat.getColor(this, R.color.white)
         bottomNavigation.titleState = AHBottomNavigation.TitleState.ALWAYS_SHOW
