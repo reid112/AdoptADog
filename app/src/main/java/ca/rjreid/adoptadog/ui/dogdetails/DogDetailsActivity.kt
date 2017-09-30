@@ -7,8 +7,10 @@ import android.support.v7.widget.Toolbar
 import ca.rjreid.adoptadog.R
 import ca.rjreid.adoptadog.data.model.Dog
 import ca.rjreid.adoptadog.ui.base.BaseActivity
+import ca.rjreid.adoptadog.util.image
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_dog_details.*
+import kotlinx.android.synthetic.main.component_dog_list_item.view.*
 import javax.inject.Inject
 
 class DogDetailsActivity : BaseActivity(), DogDetailsView {
@@ -23,12 +25,15 @@ class DogDetailsActivity : BaseActivity(), DogDetailsView {
 
     //region Variables
     @Inject lateinit var presenter: DogDetailsPresenter
+    private var dog: Dog? = null
     //endregion
 
     //region Lifecycle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
+
+        presenter.create()
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
@@ -44,6 +49,18 @@ class DogDetailsActivity : BaseActivity(), DogDetailsView {
     override fun onDestroy() {
         super.onDestroy()
         presenter.destroy()
+    }
+    //endregion
+
+    //region View Implementation
+    override fun init() {
+        dog = intent.extras.get(DogDetailsPresenter.EXTRA_DOG) as Dog
+        dog?.let {
+            dogImage.image(it.imageUrl)
+            dogName.text = it.name
+            dogAge.text = it.age
+            dogBreed.text = it.breed
+        }
     }
     //endregion
 

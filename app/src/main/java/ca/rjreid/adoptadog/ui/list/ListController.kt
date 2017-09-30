@@ -15,7 +15,7 @@ import com.bluelinelabs.conductor.Controller
 
 class ListController : Controller() {
 
-    //hard coded data
+    //region hard coded data
     val dog1 = Dog("http://ccrezqs.com/wp-content/uploads/2016/01/4-3.jpg", "Fido", "Breed 1", "Male", "4 Months")
     val dog2 = Dog("http://ccrezqs.com/wp-content/uploads/2016/01/4-3.jpg", "Buddy", "Breed 2", "Female", "2 Years")
     val dog3 = Dog("http://ccrezqs.com/wp-content/uploads/2016/01/4-3.jpg", "Luna", "Breed 3", "Female", "6 Months")
@@ -27,7 +27,7 @@ class ListController : Controller() {
     val dog9 = Dog("http://ccrezqs.com/wp-content/uploads/2016/01/4-3.jpg", "Jimmy", "Breed 1", "Male", "4 Months")
 
     val dogs = listOf(dog1, dog2, dog3, dog4, dog5, dog6, dog7, dog8, dog9)
-    //end
+    //endregion
 
     private var recyclerView: RecyclerView? = null
     private var adapter = ListAdapter({ dog -> dogClick(dog) })

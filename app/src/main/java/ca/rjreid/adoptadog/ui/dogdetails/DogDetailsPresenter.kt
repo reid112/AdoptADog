@@ -18,11 +18,11 @@ class DogDetailsPresenter constructor(private var dogDetailsView: DogDetailsView
     private val compositeDisposable = CompositeDisposable()
     //endregion
 
-    //region State Variables
-    @State var testVariable: String = ""
-    //endregion
-
     //region Commands
+    fun create() {
+        dogDetailsView.init()
+    }
+
     fun saveInstanceState(outState: Bundle?) {
         outState?.let {
             StateSaver.saveInstanceState(this, it)
