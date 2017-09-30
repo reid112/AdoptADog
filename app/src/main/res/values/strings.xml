@@ -12,4 +12,10 @@
 
     <!-- Text -->
 
+    <!-- SMOOCH -->
+    <string name="Smooch_activityConversation">Message</string>
+    <string name="Smooch_startOfConversation">This is the start of your conversation with the CCRezQ team.</string>
+    <string name="Smooch_welcome">Feel free to leave us a message about anything that\'s on your mind!</string>
+    <string name="Smooch_messageHint">Type a message…</string>
+
 </resources>
