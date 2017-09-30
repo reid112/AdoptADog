@@ -69,6 +69,6 @@ class DogDetailsActivity : BaseActivity(), DogDetailsView {
 
     override fun getToolbar() : Toolbar? = toolbar
 
-    override fun shouldShowBackButton() = false
+    override fun shouldShowBackButton() = true
     //endregion
 }
