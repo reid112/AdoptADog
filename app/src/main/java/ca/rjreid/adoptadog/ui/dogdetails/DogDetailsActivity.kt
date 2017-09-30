@@ -1,4 +1,4 @@
-package ca.rjreid.adoptadog.ui.second
+package ca.rjreid.adoptadog.ui.dogdetails
 
 import android.content.Context
 import android.content.Intent
@@ -7,17 +7,17 @@ import android.support.v7.widget.Toolbar
 import ca.rjreid.adoptadog.R
 import ca.rjreid.adoptadog.ui.base.BaseActivity
 import dagger.android.AndroidInjection
-import kotlinx.android.synthetic.main.activity_second.*
+import kotlinx.android.synthetic.main.activity_dog_details.*
 import javax.inject.Inject
 
-class SecondActivity : BaseActivity(), SecondView {
+class DogDetailsActivity : BaseActivity(), DogDetailsView {
     companion object {
         @JvmStatic
-        fun createIntent(context: Context) = Intent(context, SecondActivity::class.java)
+        fun createIntent(context: Context) = Intent(context, DogDetailsActivity::class.java)
     }
 
     //region Variables
-    @Inject lateinit var presenter: SecondPresenter
+    @Inject lateinit var presenter: DogDetailsPresenter
     //endregion
 
     //region Lifecycle
@@ -43,10 +43,10 @@ class SecondActivity : BaseActivity(), SecondView {
     //endregion
 
     //region BaseActivity Implementation
-    override fun getLayout() = R.layout.activity_second
+    override fun getLayout() = R.layout.activity_dog_details
 
     override fun getToolbar() : Toolbar? = toolbar
 
-    override fun shouldShowBackButton() = true
+    override fun shouldShowBackButton() = false
     //endregion
 }

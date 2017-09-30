@@ -1,10 +1,10 @@
 package ca.rjreid.adoptadog.di.module
 
 import android.app.Activity
+import ca.rjreid.adoptadog.ui.dogdetails.DogDetailsActivity
+import ca.rjreid.adoptadog.ui.dogdetails.DogDetailsComponent
 import ca.rjreid.adoptadog.ui.main.MainActivity
 import ca.rjreid.adoptadog.ui.main.MainComponent
-import ca.rjreid.adoptadog.ui.second.SecondActivity
-import ca.rjreid.adoptadog.ui.second.SecondComponent
 import dagger.Binds
 import dagger.Module
 import dagger.android.ActivityKey
@@ -21,6 +21,6 @@ abstract class ActivityBuilderModule {
 
     @Binds
     @IntoMap
-    @ActivityKey(SecondActivity::class)
-    internal abstract fun bindSecondActivity(builder: SecondComponent.Builder): AndroidInjector.Factory<out Activity>
+    @ActivityKey(DogDetailsActivity::class)
+    internal abstract fun bindListActivity(builder: DogDetailsComponent.Builder): AndroidInjector.Factory<out Activity>
 }

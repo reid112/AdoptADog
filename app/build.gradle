@@ -114,4 +114,7 @@ dependencies {
     // Timber (https://github.com/JakeWharton/timber)
     implementation 'com.jakewharton.timber:timber:4.5.1'
 
+    // Conductor
+    implementation 'com.bluelinelabs:conductor:2.1.4'
+
 }

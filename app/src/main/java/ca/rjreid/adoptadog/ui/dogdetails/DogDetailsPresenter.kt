@@ -1,4 +1,4 @@
-package ca.rjreid.adoptadog.ui.second
+package ca.rjreid.adoptadog.ui.dogdetails
 
 import ca.rjreid.adoptadog.data.DataManager
 
@@ -7,7 +7,7 @@ import io.reactivex.disposables.CompositeDisposable
 import com.evernote.android.state.State
 import com.evernote.android.state.StateSaver
 
-class SecondPresenter constructor(private var secondView: SecondView, private var dataManager: DataManager) {
+class DogDetailsPresenter constructor(private var dogDetailsView: DogDetailsView, private var dataManager: DataManager) {
     //region Variables
     private val compositeDisposable = CompositeDisposable()
     //endregion

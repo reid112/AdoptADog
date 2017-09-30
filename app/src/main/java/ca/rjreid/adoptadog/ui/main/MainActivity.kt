@@ -6,7 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import ca.rjreid.adoptadog.R
 import ca.rjreid.adoptadog.ui.base.BaseActivity
-import ca.rjreid.adoptadog.ui.second.SecondActivity
+import ca.rjreid.adoptadog.ui.dogdetails.DogDetailsActivity
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
@@ -22,7 +22,7 @@ class MainActivity : BaseActivity(), MainView {
         AndroidInjection.inject(this)
 
         fab.setOnClickListener { _ ->
-            startActivity(SecondActivity.createIntent(this))
+           startActivity(DogDetailsActivity.createIntent(this))
         }
     }
 
