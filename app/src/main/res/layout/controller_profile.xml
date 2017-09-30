@@ -4,10 +4,28 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/messageButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile"/>
+        android:background="@drawable/button_green"
+        android:text="Message"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/fosterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_green"
+        android:text="Foster Application"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/adoptionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_green"
+        android:text="Adoption Application"
+        android:layout_margin="16dp"/>
 
 </LinearLayout>

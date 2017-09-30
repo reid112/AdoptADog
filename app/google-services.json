@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "177980803553",
+    "firebase_url": "https://adopt-a-dog.firebaseio.com",
+    "project_id": "adopt-a-dog",
+    "storage_bucket": "adopt-a-dog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177980803553:android:462bb93299bee5de",
+        "android_client_info": {
+          "package_name": "ca.rjreid.adoptadog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177980803553-n3hlkmcsm7u9vui315h0urih5pdjb4oa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWN_YuyOMtxpR_z4k36OHIoIAbG_tdHJY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

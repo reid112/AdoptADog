@@ -24,9 +24,7 @@ class App : Application(), HasActivityInjector {
         Timber.plant(Timber.DebugTree())
         initializeDagger()
 
-        Smooch.init(this, Settings("59cf2696933506004059adb8"), SmoochCallback {
-            // Your code after init is complete
-        })
+        Smooch.init(this, Settings("59cf2696933506004059adb8"), null)
     }
     //endregion
 
