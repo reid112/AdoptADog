@@ -130,8 +130,8 @@ class MainActivity : BaseActivity(), MainView {
 
     private fun initializeBottomNavigation() {
         val item1 = AHBottomNavigationItem(R.string.tab_title_home, R.drawable.icon_home, R.color.colorAccent)
-        val item2 = AHBottomNavigationItem(R.string.tab_title_my_dog, R.drawable.icon_home, R.color.colorAccent)
-        val item3 = AHBottomNavigationItem(R.string.tab_title_profile, R.drawable.icon_home, R.color.colorAccent)
+        val item2 = AHBottomNavigationItem(R.string.tab_title_my_dog, R.drawable.ic_dog, R.color.colorAccent)
+        val item3 = AHBottomNavigationItem(R.string.tab_title_profile, R.drawable.icon_profile, R.color.colorAccent)
 
         bottomNavigation.addItem(item1)
         bottomNavigation.addItem(item2)
