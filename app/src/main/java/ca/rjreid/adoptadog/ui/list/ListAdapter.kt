@@ -31,6 +31,7 @@ class ListAdapter(private val dogClick: (Dog) -> Unit) : RecyclerView.Adapter<Li
 
     //region Commands
     fun populateDogs(dogs: List<Dog>) {
+        this.dogs.clear()
         this.dogs.addAll(dogs)
         notifyDataSetChanged()
     }
