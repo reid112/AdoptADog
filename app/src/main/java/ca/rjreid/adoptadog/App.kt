@@ -11,6 +11,7 @@ import javax.inject.Inject
 import io.smooch.core.Settings
 import io.smooch.core.Smooch
 import io.smooch.core.SmoochCallback
+import io.smooch.core.User
 
 
 class App : Application(), HasActivityInjector {
@@ -24,7 +25,10 @@ class App : Application(), HasActivityInjector {
         Timber.plant(Timber.DebugTree())
         initializeDagger()
 
-        Smooch.init(this, Settings("59cf2696933506004059adb8"), null)
+        Smooch.init(this, Settings("59cf2696933506004059adb8"), ( {
+
+        }))
+
     }
     //endregion
 
