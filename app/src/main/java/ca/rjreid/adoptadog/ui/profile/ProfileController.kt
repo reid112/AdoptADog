@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import ca.rjreid.adoptadog.R
+import ca.rjreid.adoptadog.ui.main.MainActivity
 import ca.rjreid.adoptadog.util.image
 import com.bluelinelabs.conductor.Controller
 import io.smooch.ui.ConversationActivity
@@ -41,19 +42,24 @@ class ProfileController : Controller() {
         memberSince = view.findViewById(R.id.memberSince)
         profilePicture = view.findViewById(R.id.profilePicture)
 
-        fullName.text = "Riley Reid"
-        dob.text = "March 20, 1991"
-        memberSince.text = "Fostering since Sept 30, 2017"
-        profilePicture.image("https://scontent.fyqr1-1.fna.fbcdn.net/v/t31.0-8/20776458_10159391956595722_2459934921221131332_o.jpg?oh=eb5f2311db7311f33fffa147c82ab4eb&oe=5A43AC62")
-
         return view
     }
 
     override fun onAttach(view: View) {
         super.onAttach(view)
 
+        if (activity is MainActivity) {
+            (activity as MainActivity).supportActionBar?.title = "Profile"
+        }
+
+        fullName.text = "Riley Reid"
+        dob.text = "March 20, 1991"
+        memberSince.text = "Fostering since Sept 30, 2017"
+        profilePicture.image("https://scontent.fyqr1-1.fna.fbcdn.net/v/t31.0-8/20776458_10159391956595722_2459934921221131332_o.jpg?oh=eb5f2311db7311f33fffa147c82ab4eb&oe=5A43AC62")
+
+
         val builder = CustomTabsIntent.Builder()
-        builder.setToolbarColor(ContextCompat.getColor(activity, R.color.colorPrimary))
+        builder.setToolbarColor(ContextCompat.getColor(activity, R.color.colorPrimaryDarkish))
         val customTabsIntent = builder.build()
 
         messageButton.setOnClickListener { ConversationActivity.show(activity) }

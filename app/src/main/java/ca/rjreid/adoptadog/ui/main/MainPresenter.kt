@@ -32,6 +32,10 @@ class MainPresenter constructor(private var mainView: MainView, private var data
 
     //region Bottom Navigation Implementation
     override fun onTabSelected(position: Int, wasSelected: Boolean): Boolean {
+        if (wasSelected) {
+            return false
+        }
+
         when (position)
         {
             0 -> mainView.showHome()

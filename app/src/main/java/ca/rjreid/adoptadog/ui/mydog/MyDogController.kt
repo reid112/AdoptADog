@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ca.rjreid.adoptadog.R
+import ca.rjreid.adoptadog.ui.main.MainActivity
 import ca.rjreid.adoptadog.util.image
 import com.bluelinelabs.conductor.Controller
 import de.hdodenhof.circleimageview.CircleImageView
@@ -21,6 +22,11 @@ class MyDogController : Controller() {
 
     override fun onAttach(view: View) {
         super.onAttach(view)
+
+        if (activity is MainActivity) {
+            (activity as MainActivity).supportActionBar?.title = "My Dogs"
+        }
+
         dogImage.image("http://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.jpg")
     }
 }

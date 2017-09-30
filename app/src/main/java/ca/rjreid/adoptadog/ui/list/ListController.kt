@@ -13,6 +13,7 @@ import ca.rjreid.adoptadog.R
 import ca.rjreid.adoptadog.data.DataManager
 import ca.rjreid.adoptadog.data.model.Dog
 import ca.rjreid.adoptadog.ui.dogdetails.DogDetailsActivity
+import ca.rjreid.adoptadog.ui.main.MainActivity
 import com.bluelinelabs.conductor.Controller
 
 
@@ -34,6 +35,11 @@ class ListController : Controller(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onAttach(view: View) {
         super.onAttach(view)
+
+        if (activity is MainActivity) {
+            (activity as MainActivity).supportActionBar?.title = "CC RezQs"
+        }
+
         val layoutManager = GridLayoutManager(activity, 2)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
@@ -63,6 +69,7 @@ class ListController : Controller(), SwipeRefreshLayout.OnRefreshListener {
 
     //region Helpers
     private fun refresh() {
+        adapter.clearDogs()
         swipeRefreshLayout.isRefreshing = true
         dm?.fetchDogs()?.subscribe(
                 { updateDogs(it) },
