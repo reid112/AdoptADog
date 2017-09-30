@@ -32,12 +32,6 @@ class ListController : Controller() {
     private var recyclerView: RecyclerView? = null
     private var adapter = ListAdapter({ dog -> dogClick(dog) })
 
-    private val listView by lazy {
-        val layoutManager = GridLayoutManager(activity, 2)
-        recyclerView?.layoutManager = layoutManager
-        recyclerView
-    }
-
     override fun onCreateView(@NonNull inflater: LayoutInflater, @NonNull container: ViewGroup): View {
         val view = inflater.inflate(R.layout.controller_list, container, false)
         recyclerView = view.findViewById(R.id.recyclerView)
@@ -46,7 +40,9 @@ class ListController : Controller() {
 
     override fun onAttach(view: View) {
         super.onAttach(view)
-        listView?.adapter = adapter
+        val layoutManager = GridLayoutManager(activity, 2)
+        recyclerView?.layoutManager = layoutManager
+        recyclerView?.adapter = adapter
         updateDogs(dogs)
     }
 
