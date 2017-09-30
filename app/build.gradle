@@ -114,7 +114,10 @@ dependencies {
     // Timber (https://github.com/JakeWharton/timber)
     implementation 'com.jakewharton.timber:timber:4.5.1'
 
-    // Conductor
+    // Bottom Navigation (https://github.com/aurelhubert/ahbottomnavigation)
+    implementation 'com.aurelhubert:ahbottomnavigation:2.1.0'
+
+    // Conductor (https://github.com/bluelinelabs/Conductor)
     implementation 'com.bluelinelabs:conductor:2.1.4'
 
 }

@@ -2,8 +2,11 @@
     <!-- General -->
     <string name="app_name">Adopt A Dog</string>
 
-    <!-- Screen Titles -->
-    <string name="title_main">Main</string>
+    <!-- Tab Titles -->
+    <string name="tab_title_home">Home</string>
+    <string name="tab_title_my_dog">My Dog</string>
+    <string name="tab_title_messages">Messages</string>
+    <string name="tab_title_profile">Profile</string>
 
     <!-- Menus -->
     <string name="action_settings">Settings</string>
