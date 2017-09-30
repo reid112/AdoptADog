@@ -7,5 +7,5 @@ interface MainView : BaseView {
     fun initialize(dm: DataManager)
     fun showHome()
     fun showMyDog()
-    fun showProfile()
+    fun showProfile(dm: DataManager)
 }

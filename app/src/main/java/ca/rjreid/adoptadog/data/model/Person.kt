@@ -6,11 +6,17 @@ import com.google.gson.annotations.SerializedName
 
 
 data class Person(val name: String,
-               val dob: String,
-                  var memberSince : String) : Parcelable {
+                  val dob: String,
+                  val email: String,
+                  val memberSince: String,
+                  val isApproved: Boolean,
+                  val socialToken: String) : Parcelable {
     constructor(source: Parcel) : this(
             source.readString(),
             source.readString(),
+            source.readString(),
+            source.readString(),
+            1 == source.readInt(),
             source.readString()
     )
 
@@ -19,7 +25,10 @@ data class Person(val name: String,
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
         writeString(name)
         writeString(dob)
+        writeString(email)
         writeString(memberSince)
+        writeInt((if (isApproved) 1 else 0))
+        writeString(socialToken)
     }
 
     companion object {

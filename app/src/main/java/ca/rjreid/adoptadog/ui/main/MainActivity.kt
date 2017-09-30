@@ -20,6 +20,9 @@ import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
+import android.content.Intent
+
+
 
 
 class MainActivity : BaseActivity(), MainView {
@@ -45,6 +48,11 @@ class MainActivity : BaseActivity(), MainView {
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
         presenter.restoreInstanceState(savedInstanceState)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+        super.onActivityResult(requestCode, resultCode, data)
+        router?.getControllerWithTag("Profile")?.onActivityResult(requestCode, resultCode, data)
     }
 
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -94,14 +102,18 @@ class MainActivity : BaseActivity(), MainView {
         router?.pushController(RouterTransaction
                 .with(MyDogController())
                 .pushChangeHandler(HorizontalChangeHandler())
-                .popChangeHandler(HorizontalChangeHandler()))
+                .popChangeHandler(HorizontalChangeHandler())
+                .tag("MyDog"))
     }
 
-    override fun showProfile() {
+    override fun showProfile(dm: DataManager) {
+        val profileController = ProfileController()
+        profileController.setDataManager(dm)
         router?.pushController(RouterTransaction
-                .with(ProfileController())
+                .with(profileController)
                 .pushChangeHandler(HorizontalChangeHandler())
-                .popChangeHandler(HorizontalChangeHandler()))
+                .popChangeHandler(HorizontalChangeHandler())
+                .tag("Profile"))
     }
     //endregion
 
@@ -111,7 +123,7 @@ class MainActivity : BaseActivity(), MainView {
             if (!it.hasRootController()) {
                 val listController = ListController()
                 listController.setDataManager(dm)
-                it.setRoot(RouterTransaction.with(listController))
+                it.setRoot(RouterTransaction.with(listController).tag("List"))
             }
         }
     }

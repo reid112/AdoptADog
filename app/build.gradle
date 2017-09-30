@@ -128,6 +128,9 @@ dependencies {
     // Smooch (https://github.com/smooch/smooch-android)
     implementation 'io.smooch:core:5.0.0'
     implementation 'io.smooch:ui:5.0.0'
+
+    // Facebook Login (https://developers.facebook.com/docs/facebook-login/android/)
+    implementation 'com.facebook.android:facebook-login:[4,5)'
 }
 
 apply plugin: 'com.google.gms.google-services'

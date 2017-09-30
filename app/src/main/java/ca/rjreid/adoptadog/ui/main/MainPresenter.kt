@@ -40,7 +40,7 @@ class MainPresenter constructor(private var mainView: MainView, private var data
         {
             0 -> mainView.showHome()
             1 -> mainView.showMyDog()
-            2 -> mainView.showProfile()
+            2 -> mainView.showProfile(dataManager)
         }
 
         return true
