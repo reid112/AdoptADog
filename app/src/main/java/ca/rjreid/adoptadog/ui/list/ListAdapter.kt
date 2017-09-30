@@ -46,7 +46,7 @@ class ListAdapter(private val dogClick: (Dog) -> Unit) : RecyclerView.Adapter<Li
     class ViewHolder(view: View, private val dogClick: (Dog) -> Unit) : RecyclerView.ViewHolder(view) {
         fun bindDog(dog: Dog) {
             with(dog) {
-                itemView.dogImage.image(imageUrl)
+                itemView.dogImage.image(image)
                 itemView.dogName.text = name
                 itemView.dogAge.text = age
                 itemView.dogBreed.text = breed

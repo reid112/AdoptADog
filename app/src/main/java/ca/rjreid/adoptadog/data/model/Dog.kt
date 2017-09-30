@@ -5,7 +5,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 
-data class Dog(val imageUrl: String,
+data class Dog(val image: String,
                val name: String,
                val breed: String,
                val sex: String,
@@ -21,7 +21,7 @@ data class Dog(val imageUrl: String,
     override fun describeContents() = 0
 
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
-        writeString(imageUrl)
+        writeString(image)
         writeString(name)
         writeString(breed)
         writeString(sex)

@@ -56,7 +56,7 @@ class DogDetailsActivity : BaseActivity(), DogDetailsView {
     override fun init() {
         dog = intent.extras.get(DogDetailsPresenter.EXTRA_DOG) as Dog
         dog?.let {
-            dogImage.image(it.imageUrl)
+            dogImage.image(it.image)
             dogName.text = it.name
             dogAge.text = it.age
             dogBreed.text = it.breed

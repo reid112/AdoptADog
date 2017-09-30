@@ -1,5 +1,8 @@
 package ca.rjreid.adoptadog.data
 
+import ca.rjreid.adoptadog.data.model.Dog
+import io.reactivex.Observable
+
 interface DataManager {
-//    fun fetchFrontPage(frontPageType: FrontPageTypes, timeFilter: TimeFilters, after: String): Observable<PostsHolder>
+    fun fetchDogs(): Observable<List<Dog>>
 }

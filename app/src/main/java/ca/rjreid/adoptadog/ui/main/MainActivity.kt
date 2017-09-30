@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import ca.rjreid.adoptadog.R
+import ca.rjreid.adoptadog.data.DataManager
 import ca.rjreid.adoptadog.ui.base.BaseActivity
 import ca.rjreid.adoptadog.ui.list.ListController
 import ca.rjreid.adoptadog.ui.mydog.MyDogController
@@ -80,8 +81,8 @@ class MainActivity : BaseActivity(), MainView {
     //endregion
 
     //region View Implementation
-    override fun initialize() {
-        initializeConductor()
+    override fun initialize(dm: DataManager) {
+        initializeConductor(dm)
         initializeBottomNavigation()
     }
 
@@ -105,10 +106,12 @@ class MainActivity : BaseActivity(), MainView {
     //endregion
 
     //region Helpers
-    private fun initializeConductor() {
+    private fun initializeConductor(dm: DataManager) {
         router?.let {
             if (!it.hasRootController()) {
-                it.setRoot(RouterTransaction.with(ListController()))
+                val listController = ListController()
+                listController.setDataManager(dm)
+                it.setRoot(RouterTransaction.with(listController))
             }
         }
     }

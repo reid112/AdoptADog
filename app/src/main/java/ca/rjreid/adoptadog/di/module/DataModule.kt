@@ -4,7 +4,7 @@ import android.content.Context
 import ca.rjreid.adoptadog.BuildConfig
 import ca.rjreid.adoptadog.data.DataManager
 import ca.rjreid.adoptadog.data.DataManagerWrapper
-import ca.rjreid.adoptadog.data.remote.ExampleService
+import ca.rjreid.adoptadog.data.remote.CcRezQService
 import ca.rjreid.adoptadog.di.qualifier.ApplicationContext
 import dagger.Module
 import dagger.Provides
@@ -20,7 +20,7 @@ import javax.inject.Singleton
 class DataModule {
 
     companion object {
-        const val REDDIT_BASE_URL = "https://www.reddit.com"
+        const val REDDIT_BASE_URL = "http://159.203.12.17:9090"
     }
 
     @Provides @Singleton
@@ -52,8 +52,8 @@ class DataModule {
     }
 
     @Provides @Singleton
-    fun providesRedditService(retrofit: Retrofit): ExampleService = retrofit.create(ExampleService::class.java)
+    fun providesRedditService(retrofit: Retrofit): CcRezQService = retrofit.create(CcRezQService::class.java)
 
     @Provides @Singleton
-    fun providesDataManger(redditService: ExampleService): DataManager = DataManagerWrapper(redditService)
+    fun providesDataManger(service: CcRezQService): DataManager = DataManagerWrapper(service)
 }

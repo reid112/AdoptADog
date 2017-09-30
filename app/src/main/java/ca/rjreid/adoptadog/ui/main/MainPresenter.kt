@@ -14,7 +14,7 @@ class MainPresenter constructor(private var mainView: MainView, private var data
 
     //region Commands
     fun create() {
-        mainView.initialize()
+        mainView.initialize(dataManager)
     }
 
     fun saveInstanceState(outState: Bundle?) {
